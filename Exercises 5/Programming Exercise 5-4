@@ -1,0 +1,30 @@
+using System;
+using static System.Console;
+class DailyTemps
+{
+   static void Main()
+   {
+     bool gameOver = false; 
+     int userInput;
+     int sum = 0;
+     double avg = 0.0;
+     int numbers = 0;
+    do {
+      userInput = int.Parse(ReadLine());
+      if (userInput == 999) {
+        gameOver = true;
+      }
+      else if (userInput >= -20 && userInput <= 130){
+      sum += userInput;
+      numbers++;
+      }
+      else {
+        WriteLine("Valid temperatures range from -20 to 130. Please reenter temperature.");
+      }
+    }while (gameOver != true);
+    avg = (double) sum / numbers;
+    Write(numbers);
+    Write(avg);
+ 
+   }
+}
