@@ -1,0 +1,22 @@
+using System;
+using static System.Console;
+class TestScoreList
+{
+  const int NUM_TEST_SCORES = 8;
+   static void Main()
+   {
+      int userInput = 0;
+      int totalTestScores = 0;
+      double averageTestScores = 0.0;
+      int[] testScoresArray = new int[NUM_TEST_SCORES];
+       for (int runTestScores = 0; runTestScores < NUM_TEST_SCORES; runTestScores++) {
+         userInput = int.Parse(ReadLine());
+         testScoresArray[runTestScores] = userInput;
+         totalTestScores += userInput;
+       }
+       averageTestScores = (double) totalTestScores/NUM_TEST_SCORES;
+       for (int runTestScores = 0; runTestScores < NUM_TEST_SCORES; runTestScores++) {
+         WriteLine("Test # {0}: {1} From average: {2:N3}", runTestScores, testScoresArray[runTestScores], (testScoresArray[runTestScores]-averageTestScores));
+       }
+   }
+}
