@@ -1,0 +1,57 @@
+using System;
+using static System.Console;
+class TemperaturesComparison
+{
+   static void Main()
+   {
+      int userInputInt = 0;
+      int[] newarray = new int[5];
+      int[] sortedArray = new int[5];
+      int sortedArrayPosition = 0;
+      int totalUserInputs = 0;
+      double averageUserInput = 0.0;
+      for (int numUserInputs = 0; numUserInputs < 5; numUserInputs++) {
+        
+        userInputInt = int.Parse(ReadLine());
+        if (userInputInt >130 || userInputInt < -30) {
+          Write("Invalid Input. Please enter again: ");
+          userInputInt = int.Parse(ReadLine());
+        }
+        newarray[numUserInputs] = userInputInt;
+        totalUserInputs += userInputInt;
+      }
+      foreach(int i in newarray) {
+ 
+        sortedArray[sortedArrayPosition] = i;
+        sortedArrayPosition++;
+      }
+      Array.Sort(sortedArray);
+      
+      for (int numUserInputs = 0; numUserInputs < 1; numUserInputs++) {
+      if (sortedArray[numUserInputs] == newarray[numUserInputs] && newarray[0] < newarray[4]) {
+        Write("Getting warmer: ");
+      }
+      else {
+      Array.Reverse(sortedArray);
+      if (sortedArray[numUserInputs] == newarray[numUserInputs] && newarray[0] > newarray[4]) {
+        Write("Getting cooler: ");
+      }
+      else {
+        Write("It's a mixed bag: ");
+      }
+      }
+      }
+      averageUserInput = (double) totalUserInputs/5;
+      Write("{0}", averageUserInput);
+ 
+ 
+      for (int numUserInputs = 0; numUserInputs < 5; numUserInputs++) {
+       Write("{0} ", newarray[numUserInputs]);
+        
+      }
+      for (int numUserInputs = 0; numUserInputs < 5; numUserInputs++) {
+       Write("{0} ", sortedArray[numUserInputs]);
+        
+      }
+   }
+}
