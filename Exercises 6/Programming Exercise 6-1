@@ -1,0 +1,34 @@
+using System;
+using static System.Console;
+class ArrayDemo
+{
+   static void Main()
+   {
+      string userInput;
+      int userPosition;
+      bool gameOver = false;
+       int[] nums = {7, 6, 3, 2, 10, 8, 4, 5, 9, 1};
+       
+    do {
+      userInput = ReadLine();
+       if (userInput == "1") {
+         for (int i = 0; i < nums.Length; i++) {
+           Write("{0} ", nums[i]);
+         }
+       }
+       if (userInput == "2") {
+         for (int i = 0; i < nums.Length; i++) {
+           Write("{0} ", nums[nums.Length - i - 1]);
+         }
+       }
+       if (userInput == "3") {
+          userPosition = int.Parse(ReadLine());
+           Write("{0}", nums[userPosition]);
+         
+       }
+       if (userInput == "4") {
+         gameOver = true;
+       }
+   } while (gameOver != true);
+   }  
+}
