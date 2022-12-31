@@ -1,1 +1,16 @@
+using System;
+using static System.Console;
+class SumFiveints
+{
+   static void Main()
+   {
+     int userInput;
+     int sum = 0;
+    for (int i=0; i <5; i++) {
+      userInput = int.Parse(ReadLine());
+      sum += userInput;
+    }
+    Write(sum);
+   }
+}
 
