@@ -1,0 +1,28 @@
+using System;
+using static System.Console;
+using System.Globalization;
+class TippingTable3
+{
+   static void Main()
+   {
+     WriteLine();
+     double lowestTip = (double) int.Parse(ReadLine());
+     WriteLine();
+     double highestTip = (double) int.Parse(ReadLine());
+     WriteLine();
+    int lowestBill = int.Parse(ReadLine());
+     WriteLine();
+    int highestBill = int.Parse(ReadLine());
+ 
+    double total;
+    for (int i = lowestBill; i <= highestBill; i = i + 5) {
+      Write(String.Format("{0,10}", i.ToString("C", CultureInfo.GetCultureInfo("en-US"))));
+      for (double tip = lowestTip; tip <= highestTip; tip = tip + .05) {
+        total = i * tip;
+        Write(String.Format("{0,10}", total.ToString("N2"))); 
+      }
+      WriteLine();
+    }
+   }
+    
+}
