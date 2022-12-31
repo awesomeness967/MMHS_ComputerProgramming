@@ -1,0 +1,47 @@
+using System;
+using static System.Console;
+using System.Linq;
+class CountVowelsM
+{
+   public static void Main()
+   {
+     string userPhrase = ReadLine();
+    int totalVowels = CountVowels(userPhrase);
+    Write(totalVowels);
+   }
+   public static int CountVowels(string phrase)
+   {
+     string addToArray;
+     char addToArrayChar;
+     int lengthOfPhrase = phrase.Length;
+     char[] charSplitArray = new char[lengthOfPhrase];
+     // List<char> list = new List<char>();
+    for (int i = 0; i < phrase.Length; i++) {
+      addToArray = phrase.Substring(i,1);
+      addToArrayChar = char.Parse(addToArray);
+      charSplitArray = charSplitArray.Append(addToArrayChar).ToArray();
+      Write(charSplitArray[i]);
+    }
+ 
+     int totalVowels = 0;
+    foreach (char i in charSplitArray) {
+      if (
+      i == 'a'||
+      i == 'e'||
+      i == 'i'||
+      i == 'o'||
+      i == 'u'||
+      i == 'A'||
+      i == 'E'||
+      i == 'I'||
+      i == 'O'||
+      i == 'U'
+      ) {
+        totalVowels++;
+      }
+      
+    }
+ 
+    return totalVowels;
+   }
+}
