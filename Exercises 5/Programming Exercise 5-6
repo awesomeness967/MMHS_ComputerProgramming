@@ -1,0 +1,56 @@
+using System;
+using static System.Console;
+using System.Globalization;
+class HomeSales
+{
+   static void Main()
+   {
+     bool gameOver = false;
+     char userInput;
+     int dsales = 0;
+     int esales = 0;
+     int fsales = 0;
+     int userInputSales = 0;
+     int totalSales = 0;
+    do {
+      userInput = char.Parse(ReadLine());
+      userInput = Char.ToUpper(userInput);
+      if (userInput == 'Z') {
+        gameOver = true;
+      }
+      else{
+        if (userInput == 'D'){
+          WriteLine("Enter amount of sale: ");
+          userInputSales = int.Parse(ReadLine());
+          dsales += userInputSales;
+          totalSales += userInputSales;
+        }
+        else if (userInput == 'E')  {
+          WriteLine("Enter amount of sale: ");
+          userInputSales = int.Parse(ReadLine());
+          esales += userInputSales;
+          totalSales += userInputSales;
+        }
+          else if (userInput == 'F') {
+            WriteLine("Enter amount of sale: ");
+          userInputSales = int.Parse(ReadLine());
+          fsales += userInputSales;
+          totalSales += userInputSales;
+          }
+          else {
+            WriteLine("Sorry - invalid salesperson");
+          }
+        }
+      
+ 
+    }while(gameOver != true);
+    WriteLine("Danielle sold {0}", dsales.ToString("C", CultureInfo.GetCultureInfo("en-US")));
+    WriteLine("Edward sold {0}", esales.ToString("C", CultureInfo.GetCultureInfo("en-US")));
+    WriteLine("Francis sold {0}", fsales.ToString("C", CultureInfo.GetCultureInfo("en-US")));
+    WriteLine("Total sales were {0}", totalSales.ToString("C", CultureInfo.GetCultureInfo("en-US")));
+    if (totalSales != 15) {
+      WriteLine("There was a tie");
+    }
+    
+   }
+}
