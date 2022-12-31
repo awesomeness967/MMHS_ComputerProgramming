@@ -1,0 +1,15 @@
+using static System.Console;
+class Sum200
+{
+   static void Main()
+   {
+     int total = 0;
+    for (int i = 1; i <= 200; i++) {
+      total = i + total;
+      if (i == 100) {
+        WriteLine(total);
+      }
+    }
+    WriteLine(total);
+   }
+}
