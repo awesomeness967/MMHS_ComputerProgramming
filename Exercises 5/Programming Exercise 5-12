@@ -1,0 +1,30 @@
+using System;
+using static System.Console;
+using System.Collections.Generic;
+class WebAddress
+{
+   static void Main()
+   {
+      Write("enter good business name: ");
+      string businessName = ReadLine();
+      char newChar;
+      List<char> substringsOfBusinessName = new List<char>();
+      for (int i = 0; i < businessName.Length; i++) {
+      
+        newChar =char.Parse(businessName.Substring(i, 1));
+        if (newChar == ' ') {
+ 
+        }
+        else {
+          substringsOfBusinessName.Add(newChar);
+        }
+        
+      }
+      Write("www.");
+      for (int i = 0; i < substringsOfBusinessName.Count; i++) {
+        Write(substringsOfBusinessName[i]);
+      }
+      Write(".com");
+ 
+   }
+}
