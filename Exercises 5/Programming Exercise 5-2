@@ -1,1 +1,22 @@
+using System;
+using static System.Console;
+class SumInts
+{
+   static void Main()
+   {
+     bool gameOver = false; 
+     int userInput;
+     int sum = 0;
+    do {
+      userInput = int.Parse(ReadLine());
+      if (userInput == 999) {
+        gameOver = true;
+      }
+      else{
+      sum += userInput;
+      }
+    }while (gameOver != true);
+    Write(sum);
+   }
+}
 
