@@ -1,0 +1,26 @@
+using System;
+using static System.Console;
+class EnterUppercaseLetters
+{
+   static void Main()
+   {
+    char userInput;
+    bool gameOver = false;
+    do {
+      userInput = char.Parse(ReadLine());
+      if (userInput == '!') {
+        gameOver = true;
+      }
+      else{
+        if (Char.IsUpper(userInput) == true) {
+          WriteLine("OK");
+        }
+        else {
+          WriteLine("Sorry - that was not an uppercase letter.");
+        }
+      }
+ 
+    
+   } while (gameOver != true);
+   }
+}
